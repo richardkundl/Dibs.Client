@@ -41,13 +41,13 @@ namespace DIBS.Client
             var hash = new SHA256Managed();
 
             // Compute the hash for the inner data first
-            var innerData = new byte[innerKey.Length + message.Length];
+            byte[] innerData = new byte[innerKey.Length + message.Length];
             Buffer.BlockCopy(innerKey, 0, innerData, 0, innerKey.Length);
             Buffer.BlockCopy(message, 0, innerData, innerKey.Length, message.Length);
             byte[] innerHash = hash.ComputeHash(innerData);
 
             // Compute the entire hash
-            var data = new byte[outerKey.Length + innerHash.Length];
+            byte[] data = new byte[outerKey.Length + innerHash.Length];
             Buffer.BlockCopy(outerKey, 0, data, 0, outerKey.Length);
             Buffer.BlockCopy(innerHash, 0, data, outerKey.Length, innerHash.Length);
             byte[] result = hash.ComputeHash(data);
@@ -72,10 +72,10 @@ namespace DIBS.Client
 
         private static byte[] HexDecode(string hex)
         {
-            var bytes = new byte[hex.Length/2];
+            var bytes = new byte[hex.Length / 2];
             for (int i = 0; i < bytes.Length; i++)
             {
-                bytes[i] = byte.Parse(hex.Substring(i*2, 2), NumberStyles.HexNumber);
+                bytes[i] = byte.Parse(hex.Substring(i * 2, 2), NumberStyles.HexNumber);
             }
             return bytes;
         }
