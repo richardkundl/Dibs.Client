@@ -13,6 +13,7 @@ namespace DIBS.Client.Tests
         {
             // Arrange
             var post = new DibsPost();
+            post.Test = "";
 
             // Act
             string mac = post.GenerateHMAC(KEY);
