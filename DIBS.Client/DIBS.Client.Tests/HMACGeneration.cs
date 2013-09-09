@@ -20,7 +20,7 @@ namespace DIBS.Client.Tests
 
             // Assert
             string expected = HMACGenerator.HashHMACHex(KEY,
-                                                        "acceptreturnurl=&amount=&callbackurl=&cancelreturnurl=&currency=&language=&merchant=&orderid=");
+                              "acceptreturnurl=&amount=&billingaddress=&billingemail=&billingfirstname=&billinglastname=&billingmobile=&billingpostalcode=&billingpostalplace=&callbackurl=&cancelreturnurl=&currency=&language=&merchant=&orderid=&paytype=");
             Assert.AreEqual(expected, mac);
         }
 
@@ -35,7 +35,7 @@ namespace DIBS.Client.Tests
 
             // Assert
             string expected = HMACGenerator.HashHMACHex(KEY,
-                                                        "acceptreturnurl=&amount=&callbackurl=&cancelreturnurl=&currency=&language=&merchant=&orderid=&test=1");
+                              "acceptreturnurl=&amount=&billingaddress=&billingemail=&billingfirstname=&billinglastname=&billingmobile=&billingpostalcode=&billingpostalplace=&callbackurl=&cancelreturnurl=&currency=&language=&merchant=&orderid=&paytype=&test=1");
             Assert.AreEqual(expected, mac);
         }
     }
