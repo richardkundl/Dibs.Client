@@ -89,5 +89,10 @@ namespace DIBS.Client
 
             return name;
         }
+
+        public override string ToString()
+        {
+            return GenereatePostMessage();
+        }
     }
 }
