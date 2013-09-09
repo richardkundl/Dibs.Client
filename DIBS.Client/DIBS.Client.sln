@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIBS.Client", "DIBS.Client\DIBS.Client.csproj", "{5A487A98-787A-4DF2-84BB-A9D24766AAE1}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIBS.Client", "DIBS.Client\DIBS.Client.csproj", "{89671433-17F0-45AA-983B-5969130A7CE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIBS.Client.Tests", "DIBS.Client.Tests\DIBS.Client.Tests.csproj", "{550F3E28-BBF2-43CC-A8C6-9906B5B4889C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIBS.Client.Tests", "DIBS.Client.Tests\DIBS.Client.Tests.csproj", "{BAA28032-E394-490D-B72A-A0A2ED8F24ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5A487A98-787A-4DF2-84BB-A9D24766AAE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A487A98-787A-4DF2-84BB-A9D24766AAE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A487A98-787A-4DF2-84BB-A9D24766AAE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A487A98-787A-4DF2-84BB-A9D24766AAE1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{550F3E28-BBF2-43CC-A8C6-9906B5B4889C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{550F3E28-BBF2-43CC-A8C6-9906B5B4889C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{550F3E28-BBF2-43CC-A8C6-9906B5B4889C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{550F3E28-BBF2-43CC-A8C6-9906B5B4889C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89671433-17F0-45AA-983B-5969130A7CE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89671433-17F0-45AA-983B-5969130A7CE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89671433-17F0-45AA-983B-5969130A7CE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89671433-17F0-45AA-983B-5969130A7CE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAA28032-E394-490D-B72A-A0A2ED8F24ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAA28032-E394-490D-B72A-A0A2ED8F24ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAA28032-E394-490D-B72A-A0A2ED8F24ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAA28032-E394-490D-B72A-A0A2ED8F24ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

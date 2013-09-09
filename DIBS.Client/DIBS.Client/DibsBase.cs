@@ -29,7 +29,7 @@ namespace DIBS.Client
                 {
                     string name = FixCasing(propertyInfo);
 
-                    message += "&" + name + "=" + propertyInfo.GetValue(this);
+                    message += "&" + name + "=" + propertyInfo.GetValue(this, null);
                 }
             }
 
@@ -63,7 +63,7 @@ namespace DIBS.Client
                 propertyInfo.GetCustomAttributes(typeof (IgnoreHashingAttribute), false).First();
             if (attribute.ValueIsSet)
             {
-                string value = propertyInfo.GetValue(this).ToString();
+                var value = propertyInfo.GetValue(this, null).ToString();
                 if (attribute.ExceptWhenValueIs == value)
                 {
                     return false;
