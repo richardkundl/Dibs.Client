@@ -44,7 +44,7 @@ namespace DIBS.Client
 
         private bool CheckIfIgnored(PropertyInfo propertyInfo)
         {
-            bool ignore = Attribute.IsDefined(propertyInfo, typeof (IgnoreHashingAttribute));
+            bool ignore = Attribute.IsDefined(propertyInfo, typeof(IgnoreHashingAttribute));
             if (ignore)
             {
                 ignore = CheckForIgnoreExceptions(propertyInfo);
@@ -55,7 +55,7 @@ namespace DIBS.Client
 
         private bool CheckForIgnoreExceptions(PropertyInfo propertyInfo)
         {
-            var attribute = (IgnoreHashingAttribute) propertyInfo.GetCustomAttributes(typeof(IgnoreHashingAttribute), false).First();
+            var attribute = (IgnoreHashingAttribute)propertyInfo.GetCustomAttributes(typeof(IgnoreHashingAttribute), false).First();
             if (attribute.ValueIsSet)
             {
                 var value = propertyInfo.GetValue(this, null).ToString();
@@ -71,7 +71,7 @@ namespace DIBS.Client
         private static string FixCasing(PropertyInfo propertyInfo)
         {
             string name = propertyInfo.Name;
-            if (Attribute.IsDefined(propertyInfo, typeof (CamelCaseAttribute)))
+            if (Attribute.IsDefined(propertyInfo, typeof(CamelCaseAttribute)))
             {
                 var sb = new StringBuilder();
                 sb.Append(name[0].ToString().ToLower());

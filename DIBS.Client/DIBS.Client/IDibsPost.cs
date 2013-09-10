@@ -11,7 +11,6 @@
         // name="oiRow3" value="1;pcs;Some description;100;45;25"
 
         string Amount { get; set; }
-        string OrderId { get; set; }
         string Currency { get; set; }
         string Merchant { get; set; }
         string BillingFirstName { get; set; }
@@ -26,6 +25,9 @@
         string CallbackUrl { get; set; }
         string Language { get; set; }
         string PayType { get; set; }
+
+        [CamelCaseAttribute]
+        string OrderId { get; set; }
 
         [IgnoreHashing]
         string MAC { get; set; }
