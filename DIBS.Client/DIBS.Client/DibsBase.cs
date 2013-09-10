@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Collections.Generic;
 
 namespace DIBS.Client
 {
@@ -11,6 +12,19 @@ namespace DIBS.Client
         {
             string message = GenereatePostMessage();
             return HMACGenerator.HashHMACHex(key, message);
+        }
+
+        protected List<string> GetPropertiesName()
+        {
+            var ret = new List<string>();
+            PropertyInfo[] propertyInfos = GetType().GetProperties();
+            SortPropertiesByName(propertyInfos);
+            foreach (PropertyInfo propertyInfo in propertyInfos)
+            {
+                ret.Add(propertyInfo.Name);
+            }
+
+            return ret;
         }
 
         private string GenereatePostMessage()
@@ -58,10 +72,14 @@ namespace DIBS.Client
             var attribute = (IgnoreHashingAttribute)propertyInfo.GetCustomAttributes(typeof(IgnoreHashingAttribute), false).First();
             if (attribute.ValueIsSet)
             {
-                var value = propertyInfo.GetValue(this, null).ToString();
-                if (attribute.ExceptWhenValueIs == value)
+                var field = propertyInfo.GetValue(this, null);
+                if (field != null)
                 {
-                    return false;
+                    var value = field.ToString();
+                    if (attribute.ExceptWhenValueIs == value)
+                    {
+                        return false;
+                    }
                 }
             }
 

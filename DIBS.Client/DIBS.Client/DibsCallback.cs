@@ -1,7 +1,28 @@
-﻿namespace DIBS.Client
+﻿using System.Collections.Specialized;
+namespace DIBS.Client
 {
     public class DibsCallback : DibsPost, IDibsCallback
     {
+        /// <summary>
+        /// ctor
+        /// </summary>
+        /// <param name="parameters"> HttpContext Reuqest params</param>
+        public DibsCallback(NameValueCollection parameters)
+        {
+            var props = GetPropertiesName();
+            foreach (var prop in props)
+            {
+                var value = parameters[prop];
+                if (value != null)
+                {
+                    this.GetType().GetProperty(prop).SetValue(this, value, null);
+                }
+            }
+
+            // add MAC 
+            this.MAC = parameters["MAC"];
+        }
+
         public string Acquirer { get; set; }
 
         [CamelCase]
