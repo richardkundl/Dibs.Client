@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CamelCaseAttribute.cs" />
+    <Compile Include="CurrencyCodes.cs" />
     <Compile Include="DibsBase.cs" />
     <Compile Include="DibsCallback.cs" />
     <Compile Include="DibsPost.cs" />
